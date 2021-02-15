@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useTodoState } from '../TodoContext';
 
 const TodoHeadBlock = styled.div`
+
     padding-top: 48px;
     padding-left: 32px;
     padding-right: 32px;
@@ -43,15 +45,18 @@ const TodoHeadBlock = styled.div`
     }  
 
     .tasks-left {
-        color: #507ee3;
+        color: #20c997;
         letter-spacing: -0.5px;
-        font-weight: 700;
-        font-size: 35px;
-        letter-spacing: -0.5px;
+        font-size: 12px;
+        font: italic 700 35px "Roboto Condensed";
     }
 `;
 
 function TodoHead() {
+  const todos = useTodoState();
+  const undoneTasks = todos.filter(todo => !todo.done);
+
+ 
   const date = new Date();
   const year = date.getFullYear();
   const monthNames = ["JAN", "FAB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
@@ -69,10 +74,10 @@ function TodoHead() {
                     <div className="year_area">{year}</div>
                 </div>
                 </div>
-                <div className="tasks-left">할일 2개 남음</div>
+                <div className="tasks-left"> 남은할일 {undoneTasks.length}개 </div>
             </div>
         </TodoHeadBlock>
-    )
+    );
 }
 
 export default TodoHead;
