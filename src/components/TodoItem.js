@@ -24,6 +24,9 @@ const TodoItemBlock = styled.div`
     align-items: center;
     padding-top: 12px;
     padding-bottom: 12px;
+    &.star {
+        order: -1;
+      }
     &:hover {
         ${Remove} {
             display: initial;
@@ -45,6 +48,7 @@ const CheckCircle = styled.div`
     ${props => props.done &&
       css`
           border: 1px solid #38d9a9;
+          color: #38d9a9; 
       `}
 `;
 
@@ -67,6 +71,7 @@ const Important = styled.div`
     cursor: pointer;
     color: #ccc; 
     font-size: 1.5rem;
+   
     &:hover {
         color: #F5E33F;
     }
@@ -74,13 +79,14 @@ const Important = styled.div`
         color: #F5E33F;
 `;
 
-function TodoItem({ id, done, text }) {
+function TodoItem({ id, done, text, star }) {
     const dispatch = useTodoDispatch();
     const onToggle = () => dispatch({ type: 'TOGGLE', id});
     const onRemove = () => dispatch({ type: 'REMOVE', id});
+    const onImportant = () => dispatch({ type: 'IMPORTANT', star});
 
     return (
-        <TodoItemBlock>
+        <TodoItemBlock className={cn("TodoItemBlock", { star })}>
 
             <CheckCircle done={done} onClick={onToggle}>
                 {done && <MdDone />}
@@ -92,7 +98,7 @@ function TodoItem({ id, done, text }) {
                 <MdDelete/>
             </Remove>
 
-            <Important>
+            <Important star={star} onClick={onImportant}>
                 <MdStar/>
             </Important>
             
