@@ -5,25 +5,25 @@ const initialTodos = [
         id: 1,
         text: '할일1',
         done: true,
-        star: false
+        // star: false
     },
     {
         id: 2 ,
         text: '할일2',
         done: true,
-        star: false
+        // star: false
     },
     {
         id: 3,
         text: '할일3',
         done: false,
-        star: false
+        // star: false
     },
     {
         id: 4,
         text: '할일4',
         done: false,
-        star: false
+        // star: false
     },
     
 ];
@@ -38,10 +38,10 @@ function todoReducer(state, action) {
                 );
         case 'REMOVE':
             return state.filter(todo => todo.id !== action.id);
-        case 'IMPORTANT':
-            return state.map(todo =>
-                todo.id === action.id ? {...todo, star: !todo.star }: todo
-                );
+        // case 'IMPORTANT':
+        //     return state.map(todo =>
+        //         todo.id === action.id ? {...todo, star: !todo.star }: todo
+        //         );
         default:
             throw new Error(`Unhandled action type: ${action.type}`);
     }

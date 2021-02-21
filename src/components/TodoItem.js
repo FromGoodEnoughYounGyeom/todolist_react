@@ -83,7 +83,7 @@ function TodoItem({ id, done, text, star }) {
     const dispatch = useTodoDispatch();
     const onToggle = () => dispatch({ type: 'TOGGLE', id});
     const onRemove = () => dispatch({ type: 'REMOVE', id});
-    const onImportant = () => dispatch({ type: 'IMPORTANT', star});
+    // const onImportant = () => dispatch({ type: 'IMPORTANT', star});
 
     return (
         <TodoItemBlock className={cn("TodoItemBlock", { star })}>
@@ -97,10 +97,10 @@ function TodoItem({ id, done, text, star }) {
             <Remove onClick={onRemove}>       
                 <MdDelete/>
             </Remove>
-
+{/* 
             <Important star={star} onClick={onImportant}>
                 <MdStar/>
-            </Important>
+            </Important> */}
             
             
         </TodoItemBlock>
