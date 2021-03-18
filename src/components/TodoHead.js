@@ -45,7 +45,7 @@ const TodoHeadBlock = styled.div`
     }  
 
     .tasks-left {
-        color: #20c997;
+        color: #6A89CC;
         letter-spacing: -0.5px;
         font-size: 12px;
         font: italic 700 35px "Roboto Condensed";

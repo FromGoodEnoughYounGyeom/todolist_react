@@ -4,12 +4,12 @@ import { MdAdd } from 'react-icons/md';
 import { useTodoDispatch, useTodoNextId } from '../TodoContext';
 
 const CircleButton = styled.button `
-    background: #38d9a9;
+    background: #6A89CC;
     &:hover {
-        background: #63e6be;
+        background: #779AE6;
     }
     &:active {
-        background: #20c997;
+        background: #627FBD;
     }
 
     z-index: 5;
@@ -36,9 +36,9 @@ const CircleButton = styled.button `
     ${props => 
         props.open &&
         css`
-            background: #ff6b6b;
+            background: #ED4C67;
             &:hover{
-                background: #ff8787;
+                background: #FF526F;
             }
             &:active{
                 background: #fa5252;

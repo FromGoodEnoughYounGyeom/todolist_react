@@ -14,7 +14,7 @@ const Remove = styled.div`
     font-size: 24px;
     cursor: pointer;
     &:hover {
-        color: #ff6b6b;
+        color: #FF526F;
     }
     display: none;
 `;
@@ -38,7 +38,7 @@ const CheckCircle = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 16px;
-    border: 1px solid #ced4da;
+    border: 1px solid #6A89CC;
     font-size: 24px;
     display: flex;
     align-items: center;
@@ -47,8 +47,8 @@ const CheckCircle = styled.div`
     cursor: pointer;
     ${props => props.done &&
       css`
-          border: 1px solid #38d9a9;
-          color: #38d9a9; 
+          border: 1px solid #6A89CC;
+          color: #6A89CC; 
       `}
 `;
 
@@ -59,7 +59,7 @@ const Text = styled.div`
     ${props =>
       props.done &&
       css`
-          color: #ced4da;
+          color: #dee2e6;
           text-decoration: line-through;
       `}
 `;
